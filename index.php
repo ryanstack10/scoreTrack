@@ -50,6 +50,7 @@ body, html {height: 100%}
 		<?php
 		if (isset($_SESSION['login_error'])){
 			echo "<p style='color:red;'>".$_SESSION['login_error']."</p>";
+			unset($_SESSION['login_error']);
 		}
 		?>
       </form>
