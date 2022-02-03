@@ -25,7 +25,7 @@
 	  $result = mysqli_query($db,$sql);
 	  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		
-      if($row['pass'] == $passwrod_hash) {
+      if($row['pass'] == $password_hash) {
          session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          unset($_SESSION['login_error']);
