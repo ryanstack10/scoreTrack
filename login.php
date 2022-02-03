@@ -30,7 +30,6 @@
 	  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		
       if($row['pass'] == $password_hash) {
-         session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          unset($_SESSION['login_error']);
 		 $_SESSION['user_id'] = $user_id;
