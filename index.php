@@ -49,7 +49,7 @@ body, html {height: 100%}
         <p><button class="w3-button w3-black" type="submit">LOGIN</button></p>
 		<?php
 		if (isset($_SESSION['login_error'])){
-			<p syle="color:red;">$_SESSION['login_error']</p>
+			echo "<p style='color:red;'>".$_SESSION['login_error']."</p>";
 		}
 		?>
       </form>
