@@ -1,3 +1,9 @@
+<?php
+include("config.php");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -37,6 +43,10 @@ body, html {height: 100%}
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="username" required name="username"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="password" required name="password"></p>
         <p><button class="w3-button w3-black" type="submit">LOGIN</button></p>
+		<?php
+		if (isset($_SESSION['login_error']))
+			<p syle="color:red;">$_SESSION['login_error']</p>
+		?>
       </form>
     </div>
   </div>

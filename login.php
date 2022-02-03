@@ -20,10 +20,12 @@
       if($count == 1) {
          session_register("myusername");
          $_SESSION['login_user'] = $myusername;
-         
+         $_SESSION['login_error'] = "";
          header("location: welcome.php");
+		 
       }else {
-         $error = "Your Login Name or Password is invalid";
+         $_SESSION['login_error'] = "Your Login Name or Password is invalid";
+		 header("location: index.php");
       }
    }
 ?>
