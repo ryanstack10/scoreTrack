@@ -17,3 +17,7 @@ set @salt = SUBSTRING(SHA2(RAND(), 512), -32);
 INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username = 'test_user2'), SHA2(CONCAT('password2', @salt), 512),@salt);
 set @salt = SUBSTRING(SHA2(RAND(), 512), -32);
 INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username = 'test_user3'), SHA2(CONCAT('password3', @salt), 512),@salt); 
+
+#teams
+INSERT INTO teams (teamname, nickname, sport) VALUES ('Case Western Reserve University', 'CWRU','RACQUETBALL');
+INSERT INTO teams (teamname, nickname, sport) VALUES ('Saline', 'SAL','PINGPONG');

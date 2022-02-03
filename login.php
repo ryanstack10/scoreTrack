@@ -8,20 +8,30 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+      $sql = "SELECT user_id FROM user WHERE username = '$myusername';";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
+	  
+	  $user_id = $row['user_id'];
+	  
+	  $sql = "SELECT * FROM security WHERE user_id = $user_id;";
+	  $result = mysqli_query($db,$sql);
+	  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	  
+	  $password_hash = $row['password'];
+	  $salt = $row['salt'];
+	  
+	  $sql = "SELECT SHA2(CONCAT('$mypassword', '$salt'), 512) AS pass";
+	  $result = mysqli_query($db,$sql);
+	  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		
-      if($count == 1) {
+      if($row['pass'] == $passwrod_hash) {
          session_register("myusername");
          $_SESSION['login_user'] = $myusername;
-         $_SESSION['login_error'] = "";
-         header("location: welcome.php");
+         unset($_SESSION['login_error']);
+		 $_SESSION['user_id'] = $user_id;
+		 
+         header("location: home.php");
 		 
       }else {
          $_SESSION['login_error'] = "Your Login Name or Password is invalid";

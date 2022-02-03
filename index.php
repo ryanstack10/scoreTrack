@@ -42,7 +42,7 @@ body, html {height: 100%}
       <h1>Login</h1>
     </div>
     <div class="w3-container">
-      <p>Login to access scoreTrack</p>
+      <p class='w3-black'>Login to access scoreTrack</p>
       <form action="/login.php" method="POST">
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="username" required name="username"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="password" required name="password"></p>

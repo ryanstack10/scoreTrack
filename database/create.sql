@@ -18,3 +18,10 @@ CREATE TABLE IF NOT EXISTS security (
 	FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
+CREATE TABLE IF NOT EXISTS teams (
+	team_id INT NOT NULL AUTO_INCREMENT,
+	teamname VARCHAR(255) NOT NULL,
+	nickname VARCHAR(4) NOT NULL,
+	sport ENUM('RACQUETBALL', 'PINGPONG'),
+	PRIMARY KEY (team_id)
+);
