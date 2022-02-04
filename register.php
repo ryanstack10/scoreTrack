@@ -26,7 +26,7 @@
       $sql = "INSERT INTO user (fname, lname, username, team_id) VALUES ('$fname', '$lname', '$username', (SELECT team_id FROM team WHERE teamname = '$team'));";
       $result = mysqli_query($db,$sql);
 	  
-	  printf(mysqli_error(mysqli $mysql));
+	  printf(mysqli_error($mysql));
       
 		  $sql = "SELECT SUBSTRING(SHA2(RAND(), 512), -32) AS salt;";
 		  $result = mysqli_query($db,$sql);
