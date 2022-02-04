@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS user (
 	team_id INT NOT NULL,
 	profile_pic VARCHAR(255) DEFAULT NULL,
 	create_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	FOREIGN KEY (team_id) REFERENCES team(team_id)
+	FOREIGN KEY (team_id) REFERENCES team(team_id),
 	PRIMARY KEY (user_id)
 );
 
