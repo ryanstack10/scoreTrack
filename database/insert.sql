@@ -1,5 +1,9 @@
 use scoreTrack;
 
+#teams
+INSERT INTO team (teamname, nickname, sport) VALUES ('Case Western Reserve University', 'CWRU','RACQUETBALL');
+INSERT INTO team (teamname, nickname, sport) VALUES ('Saline', 'SAL','PINGPONG');
+
 #User
 INSERT INTO user (fname, lname, username, team_id) VALUES ('test_lname1', 'test_fname1', 'test_user1', 1);
 INSERT INTO user (fname, lname, username, team_id) VALUES ('test_lname2', 'test_fname2', 'test_user2', 1);
@@ -18,6 +22,3 @@ INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user
 set @salt = SUBSTRING(SHA2(RAND(), 512), -32);
 INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username = 'test_user3'), SHA2(CONCAT('password3', @salt), 512),@salt); 
 
-#teams
-INSERT INTO team (teamname, nickname, sport) VALUES ('Case Western Reserve University', 'CWRU','RACQUETBALL');
-INSERT INTO team (teamname, nickname, sport) VALUES ('Saline', 'SAL','PINGPONG');
