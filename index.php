@@ -70,7 +70,7 @@ body, html {height: 100%}
 		<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required name="fname"></p>
 		<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required name="lname"></p>
 		<p><select id="team" name="team">
-  		  	<option value="Case Western Reserve Univeristy">Case Western Reserve Univeristy</option>
+  		  	<option value="Case Western Reserve University">Case Western Reserve University</option>
   		  	<option value="Saline">Saline</option>
 			</select></p>
         <p><button class="w3-button w3-black" type="submit">REGISTER</button></p>
