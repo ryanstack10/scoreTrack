@@ -35,7 +35,7 @@
 		  $sql = "INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username='$username'), SHA2(CONCAT('$password', '$salt'), 512),'$salt}');";
 		  $result = mysqli_query($db,$sql);
 		  
-		  if($result){
+		  if(!$result){
 			  $sql = "DELETE FROM user WHERE username='$username';";
 			  $result = mysqli_query($db,$sql);
 			  $_SESSION['registration'] = "failed";
