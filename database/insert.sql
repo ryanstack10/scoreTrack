@@ -1,9 +1,9 @@
 use scoreTrack;
 
 #User
-INSERT INTO user (fname, lname, username) VALUES ('test_lname1', 'test_fname1', 'test_user1');
-INSERT INTO user (fname, lname, username) VALUES ('test_lname2', 'test_fname2', 'test_user2');
-INSERT INTO user (fname, lname, username) VALUES ('test_lname3', 'test_fname3', 'test_user3');
+INSERT INTO user (fname, lname, username, team_id) VALUES ('test_lname1', 'test_fname1', 'test_user1', 1);
+INSERT INTO user (fname, lname, username, team_id) VALUES ('test_lname2', 'test_fname2', 'test_user2', 1);
+INSERT INTO user (fname, lname, username, team_id) VALUES ('test_lname3', 'test_fname3', 'test_user3', 2);
 
 #Security
 #password for test_user1 is password1
@@ -19,5 +19,5 @@ set @salt = SUBSTRING(SHA2(RAND(), 512), -32);
 INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username = 'test_user3'), SHA2(CONCAT('password3', @salt), 512),@salt); 
 
 #teams
-INSERT INTO teams (teamname, nickname, sport) VALUES ('Case Western Reserve University', 'CWRU','RACQUETBALL');
-INSERT INTO teams (teamname, nickname, sport) VALUES ('Saline', 'SAL','PINGPONG');
+INSERT INTO team (teamname, nickname, sport) VALUES ('Case Western Reserve University', 'CWRU','RACQUETBALL');
+INSERT INTO team (teamname, nickname, sport) VALUES ('Saline', 'SAL','PINGPONG');

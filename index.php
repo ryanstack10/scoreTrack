@@ -6,7 +6,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Score Track</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -28,6 +28,7 @@ body, html {height: 100%}
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
     <p><button onclick="document.getElementById('login').style.display='block'" class="w3-button w3-black">Login</button></p>
+	<p><button onclick="document.getElementById('register').style.display='block'" class="w3-button w3-black">Register</button></p>
 </div>
 
 <!-- Login Modal -->
@@ -40,8 +41,8 @@ body, html {height: 100%}
     <div class="w3-container">
       <p style="color:black">Login to access scoreTrack</p>
       <form action="/login.php" method="POST">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="username" required name="username"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="password" required name="password"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Username" required name="username"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password" required name="password"></p>
         <p><button class="w3-button w3-black" type="submit">LOGIN</button></p>
 		<?php
 		if (isset($_SESSION['login_error'])){
@@ -53,6 +54,40 @@ body, html {height: 100%}
     </div>
   </div>
 </div>
+
+<!-- Register Modal -->
+<div id="register" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('register').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Register</h1>
+    </div>
+    <div class="w3-container">
+      <p style="color:black">Register to access scoreTrack</p>
+      <form action="/register.php" method="POST">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Username" required name="username"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password" required name="password"></p>
+		<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required name="fname"></p>
+		<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required name="lname"></p>
+		<p><select id="team" name="team">
+  		  	<option value="Case Western Reserve Univeristy">Case Western Reserve Univeristy</option>
+  		  	<option value="Saline">Saline</option>
+			</select></p>
+        <p><button class="w3-button w3-black" type="submit">REGISTER</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+<?php
+
+if (isset($_SESSION['registration']) && $_SESSION['registration'] == "failed"){
+	echo "<script>alert('Registration has failed please try agian');</script>";
+	unset($_SESSION['registration']);
+} else if (isset($_SESSION['registration']) && $_SESSION['registration'] == "successful"){
+	echo "<script>alert('Account creation successful login to access');</script>";
+	unset($_SESSION['registration']);
+}
+?>
 
 </body>
 </html>
