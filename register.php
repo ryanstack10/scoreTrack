@@ -34,7 +34,7 @@
 		  
 		  $salt = $row['salt'];
 		  
-		  $sql = "INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username='$username'), SHA2(CONCAT('$password', '$salt'), 512),'$salt}');";
+		  $sql = "INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username='$username'), SHA2(CONCAT('$password', '$salt'), 512),'$salt');";
 		  $result = mysqli_query($db,$sql);
 		  
 		  if(!$result){
