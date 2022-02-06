@@ -124,6 +124,7 @@ body {
 	min-height: 812px;
 	padding: 20px 0 50px;
 	width: 960px;
+	position: relative;
 }
 #body > ul {
 	margin: 0;
