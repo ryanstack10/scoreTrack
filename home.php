@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>score\nTrack</title>
+	<title>score<br>Track</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
