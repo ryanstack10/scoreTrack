@@ -34,6 +34,9 @@
 				</li>
 			</ul>
 		</div>
+		<div>
+			<a>Profile</a> | <a>Log Out</a>
+		</div>
 	</div>
 	<div class="body">
 		<table class="styled-table">
