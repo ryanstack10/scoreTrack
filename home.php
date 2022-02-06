@@ -32,10 +32,13 @@
 				<li>
 					<a href="contact.php">contact</a>
 				</li>
+				<li>
+					<a href="profile.php">profile</a>
+				</li>
+				<li>
+					<a href="logout.php">logout</a>
+				</li>
 			</ul>
-			<div>
-				<a>Profile</a> | <a>Log Out</a>
-			</div>
 		</div>
 	</div>
 	<div class="body">
