@@ -47,12 +47,16 @@
 		    </thead>
 		    <tbody>
 		        <tr>
+					<td>1</td>
 		            <td>Dom</td>
 		            <td>6000</td>
+					<td>none</td>
 		        </tr>
 		        <tr class="active-row">
+					<td>2</td>
 		            <td>Melissa</td>
 		            <td>5150</td>
+					<td>none</td>
 		        </tr>
 		        <!-- and so on... -->
 		    </tbody>
