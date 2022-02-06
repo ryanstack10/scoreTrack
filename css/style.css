@@ -631,7 +631,7 @@ body {
 }
 
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #4e8e96;
     color: #ffffff;
     text-align: left;
 }
@@ -650,10 +650,10 @@ body {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #4e8e96;
 }
 
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #4e8e96;
 }
