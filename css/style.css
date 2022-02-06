@@ -547,9 +547,6 @@ body {
 	border-top: 1px solid #9bd9e0;
 	margin: 0;
 	padding: 0;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
 #footer > div {
 	margin: 0 auto;
