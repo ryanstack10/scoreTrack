@@ -10,14 +10,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>score<br>Track</title>
+	<title>scoreTrack</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="header">
 		<div class="section">
 			<div class="logo">
-				<a href="index.php">ScoreTrack</a>
+				<a href="index.php">Score<br>Track</a>
 			</div>
 			<ul>
 				<li class="selected">
