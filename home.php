@@ -33,9 +33,9 @@
 					<a href="contact.php">contact</a>
 				</li>
 			</ul>
-		</div>
-		<div>
-			<a>Profile</a> | <a>Log Out</a>
+			<div>
+				<a>Profile</a> | <a>Log Out</a>
+			</div>
 		</div>
 	</div>
 	<div class="body">
