@@ -121,10 +121,10 @@ body {
 }
 #body {
 	margin: 0 auto;
-	min-height: 812px;
 	padding: 20px 0 50px;
 	width: 960px;
 	position: relative;
+	min-height: 100vh;
 }
 #body > ul {
 	margin: 0;
