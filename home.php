@@ -17,7 +17,7 @@
 	<div id="header">
 		<div class="section">
 			<div class="logo">
-				<a href="index.php">Score<br>Track</a>
+				<a href="index.php">ScoreTrack</a>
 			</div>
 			<ul>
 				<li class="selected">
