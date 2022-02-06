@@ -20,7 +20,7 @@
 				<a href="index.php">ScoreTrack</a>
 			</div>
 			<ul>
-				<li class="selected">
+				<li>
 					<a href="index.php">leaderboard</a>
 				</li>
 				<li>
@@ -29,7 +29,7 @@
 				<li>
 					<a href="tournament.php">tournament</a>
 				</li>
-				<li>
+				<li class="selected">
 					<a href="contact.php">contact</a>
 				</li>
 			</ul>

@@ -20,13 +20,13 @@
 				<a href="index.php">ScoreTrack</a>
 			</div>
 			<ul>
-				<li class="selected">
+				<li>
 					<a href="index.php">leaderboard</a>
 				</li>
 				<li>
 					<a href="report.php">report</a>
 				</li>
-				<li>
+				<li class="selected">
 					<a href="tournament.php">tournament</a>
 				</li>
 				<li>
