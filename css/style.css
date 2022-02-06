@@ -625,7 +625,7 @@ body {
     margin: auto;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    width: 80%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	padding: 50px;
 }
