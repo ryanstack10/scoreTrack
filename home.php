@@ -39,8 +39,10 @@
 		<table class="styled-table">
 		    <thead>
 		        <tr>
+					<th>Rank</th>
 		            <th>Name</th>
-		            <th>Points</th>
+		            <th>Record</th>
+					<th>Recent Game</th>
 		        </tr>
 		    </thead>
 		    <tbody>
