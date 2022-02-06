@@ -125,7 +125,7 @@ body {
 	width: 960px;
 	position: relative;
 	min-height: 100vh;
-	padding-bottom: 2.5rem;
+	padding-bottom: 8rem;
 }
 #body > ul {
 	margin: 0;
@@ -554,7 +554,7 @@ body {
 	bottom: 0;
 	width: 100%;
 	margin-top: 25px;
-	height: 2.5rem;
+	height: 8rem;
 }
 #footer > div {
 	margin: 0 auto;
