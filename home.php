@@ -83,7 +83,7 @@
 					if($ret == 0){
 						$ret = a[1] <=> b[1];
 						if($ret == 0){
-							$ret = b[2] <=> a[2];
+							$ret = a[2] <=> b[2];
 						}
 					}
 					return $ret;
