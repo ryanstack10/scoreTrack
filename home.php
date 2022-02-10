@@ -56,13 +56,12 @@
 				$sql = "SELECT user_id, fname, lname FROM user;";
 		        $result = mysqli_query($db,$sql);
 				$game_history = array();
+				
+				print_r(mysqli_fetch_all($result, MYSQLI_ASSOC));
 				while($row=mysqli_fetch_assoc($result)) 
 				{
-					print_r($row);
 		        	$user_id = $row['user_id'];
 					$name = $row['fname']. ' '. $row['lname'];
-					
-					echo $name;
 					
 					$sql = "SELECT  COUNT(*) AS wins FROM game WHERE winner1=$user_id OR winner2=$user_id;";
 					$win_results = mysqli_query($db,$sql);
