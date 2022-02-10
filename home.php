@@ -84,6 +84,7 @@
 							$ret = b[2] <=> a[2];
 						}
 					}
+					return $ret;
 				});
 				
 				$count = 0;
