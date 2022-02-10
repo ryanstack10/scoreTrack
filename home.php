@@ -78,6 +78,8 @@
 					array_push($game_history, [($wins/$losses), $wins, $losses, $recent_game_id, $user_id, $name]);
 				}
 				
+				print_r($game_history);
+				
 				usort($game_history, function($a, $b){
 					$ret = $a[0] <=> $b[0];
 					if($ret == 0){
