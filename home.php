@@ -91,6 +91,7 @@
 					return $ret;
 				});
 				
+				
 				$count = 0;
 				foreach($game_history as $val){
 					if($val[4] == $_SESSION['user_id']){
@@ -105,6 +106,8 @@
 					echo "</tr>";
 					$count = $count + 1;
 				}
+				
+				print_r($game_history);
 				?>
 		    </tbody>
 		</table>
