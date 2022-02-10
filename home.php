@@ -69,16 +69,14 @@
 					
 					$sql = "SELECT  COUNT(*) AS losses FROM game WHERE loser1=$user_id OR loser2=$user_id;";
 					$loss_results = mysqli_query($db,$sql);
-					$losses = mysqli_fetch_assoc($result)['losses'];
+					$losses = mysqli_fetch_assoc($loss_results)['losses'];
 					
 					$sql = "SELECT game_id FROM game WHERE winner1=$user_id OR winner2=$user_id OR loser1=$user_id OR loser2=$user_id ORDER BY game_date DESC limit 1;";
 					$recent_results = mysqli_query($db,$sql);
-					$recent_game_id = mysqli_fetch_assoc($result)['game_id'];
+					$recent_game_id = mysqli_fetch_assoc($recent_results)['game_id'];
 					
 					array_push($game_history, [($wins/$losses == 0 ? 1 : $losses), $wins, $losses, $recent_game_id, $user_id, $name]);
 				}
-				
-				print_r($game_history);
 				
 				usort($game_history, function($a, $b){
 					$ret = $a[0] <=> $b[0];
@@ -106,8 +104,6 @@
 					echo "</tr>";
 					$count = $count + 1;
 				}
-				
-				print_r($game_history);
 				?>
 		    </tbody>
 		</table>
