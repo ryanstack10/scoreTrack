@@ -56,9 +56,9 @@
 				$sql = "SELECT user_id, fname, lname FROM user;";
 		        $result = mysqli_query($db,$sql);
 				$game_history = array();
-				print_r($result);
 				while($row=mysqli_fetch_assoc($result)) 
 				{
+					print_r($row);
 		        	$user_id = $row['user_id'];
 					$name = $row['fname']. ' '. $row['lname'];
 					
