@@ -61,6 +61,8 @@
 		        	$user_id = $row['user_id'];
 					$name = $row['fname']. ' '. $row['lname'];
 					
+					echo $name;
+					
 					$sql = "SELECT  COUNT(*) AS wins FROM game WHERE winner1=$user_id OR winner2=$user_id;";
 					$win_results = mysqli_query($db,$sql);
 					$wins = mysqli_fetch_assoc($win_results)['wins'];
