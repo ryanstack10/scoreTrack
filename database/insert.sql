@@ -22,3 +22,7 @@ INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user
 set @salt = SUBSTRING(SHA2(RAND(), 512), -32);
 INSERT INTO security (user_id, password, salt) VALUES ((SELECT user_id FROM user WHERE username = 'test_user3'), SHA2(CONCAT('password3', @salt), 512),@salt); 
 
+#game
+INSERT INTO game (winner1, loser1, type) VALUES (1,2,'2');
+INSERT INTO game (winner1, loser1, loser2, type) VALUES (1,2,3,'3');
+INSERT INTO game (winner1, winner2, loser1, loser2, type) VALUES (1,2,3,4,'4');

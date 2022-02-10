@@ -26,13 +26,13 @@
 				<li>
 					<a href="report.php">report</a>
 				</li>
-				<li class="selected">
+				<li>
 					<a href="tournament.php">tournament</a>
 				</li>
 				<li>
 					<a href="contact.php">contact</a>
 				</li>
-				<li>
+				<li class="selected">
 					<a href="profile.php">profile</a>
 				</li>
 				<li>

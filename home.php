@@ -52,19 +52,55 @@
 		        </tr>
 		    </thead>
 		    <tbody>
-		        <tr>
-					<td>1</td>
-		            <td>Dom</td>
-		            <td>6000</td>
-					<td>none</td>
-		        </tr>
-		        <tr class="active-row">
-					<td>2</td>
-		            <td>Melissa</td>
-		            <td>5150</td>
-					<td>none</td>
-		        </tr>
-		        <!-- and so on... -->
+				<?php
+				$sql = "SELECT user_id, fname, lname FROM user;";
+		        $result = mysqli_query($db,$sql);
+				$game_history = array();
+				while($row=mysqli_fetch_assoc($result)) 
+				{
+		        	$user_id = $row['user_id'];
+					$name = $row['fname']. ' '. $row['lname'];
+					
+					$sql = "SELECT  COUNT(*) AS wins FROM game WHERE winner1=$user_id OR winner2=$user_id;";
+					$win_results = mysqli_query($db,$sql);
+					$wins = mysqli_fetch_assoc($win_results)['wins'];
+					
+					$sql = "SELECT  COUNT(*) AS losses FROM game WHERE loser1=$user_id OR loser2=$user_id;";
+					$loss_results = mysqli_query($db,$sql);
+					$losses = mysqli_fetch_assoc($result)['losses'];
+					
+					$sql = "SELECT game_id FROM game WHERE winner1=$user_id OR winner2=$user_id OR loser1=$user_id OR loser2=$user_id ORDER BY game_date DESC limit 1;";
+					$recent_results = mysqli_query($db,$sql);
+					$recent_game_id = mysqli_fetch_assoc($result)['game_id'];
+					
+					array_push($game_history, [($wins/$losses), $wins, $losses, $recent_game_id, $user_id, $name]);
+				}
+				
+				usort($game_history, function($a, $b){
+					$ret = $a[0] <=> $b[0];
+					if($ret == 0){
+						$ret = a[1] <=> b[1];
+						if($ret == 0){
+							$ret = b[2] <=> a[2];
+						}
+					}
+				});
+				
+				$count = 0;
+				for($game_history as $val){
+					if($val[4] == $_SESSION['user_id']){
+						echo "<tr class='active-row'>";
+					}else{
+						echo "<tr>";
+					}
+					echo "<td>$count</td>";
+					echo "<td>$val[5]</td>";
+					echo "<td>$val[1]-$val[2]</td>";
+					echo "<td>$val[3]</td>";
+					echo "</tr>";
+					$count = $count + 1;
+				}
+				?>
 		    </tbody>
 		</table>
 	</div>
