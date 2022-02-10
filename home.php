@@ -75,7 +75,7 @@
 					$recent_results = mysqli_query($db,$sql);
 					$recent_game_id = mysqli_fetch_assoc($result)['game_id'];
 					
-					array_push($game_history, [($wins/$losses), $wins, $losses, $recent_game_id, $user_id, $name]);
+					array_push($game_history, [($wins/$losses == 0 ? 1 : $losses), $wins, $losses, $recent_game_id, $user_id, $name]);
 				}
 				
 				print_r($game_history);
