@@ -87,7 +87,7 @@
 				});
 				
 				$count = 0;
-				for($game_history as $val){
+				foreach($game_history as $val){
 					if($val[4] == $_SESSION['user_id']){
 						echo "<tr class='active-row'>";
 					}else{
