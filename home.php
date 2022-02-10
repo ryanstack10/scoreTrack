@@ -79,13 +79,11 @@
 				}
 				
 				usort($game_history, function($a, $b){
-					echo "<div>". $a[5]. "</div>";
-					echo "<div>". $b[5]. "</div>";
-					$ret = $a[0] <=> $b[0];
+					$ret = $a[0] - $b[0];
 					if($ret == 0){
-						$ret = a[1] <=> b[1];
+						$ret = a[1] - b[1];
 						if($ret == 0){
-							$ret = b[2] <=> a[2];
+							$ret = b[2] - a[2];
 						}
 					}
 					return $ret;
