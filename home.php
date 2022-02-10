@@ -79,6 +79,7 @@
 				}
 				
 				usort($game_history, function($a, $b){
+					echo "<div>". $a. "</div>";
 					$ret = $a[0] <=> $b[0];
 					if($ret == 0){
 						$ret = a[1] <=> b[1];
